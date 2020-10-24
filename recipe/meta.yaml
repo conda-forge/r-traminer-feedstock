@@ -1,4 +1,4 @@
-{% set version = '2.2-0.1' %}
+{% set version = "2.2-1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/TraMineR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/TraMineR/TraMineR_{{ version }}.tar.gz
-  sha256: 123ff8398932c8b4460219eedff15ef90358e1ed3d2d68e6e447e37882b6fcd6
+  sha256: 147e3612bb299220205691897189feffe8ca717590ea6dba19b26e2918e4596d
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -54,21 +54,12 @@ test:
 about:
   home: http://traminer.unige.ch
   license: GPL-2.0-or-later
-  summary: Toolbox for the manipulation, description and rendering of sequences, and more generally
-    the mining of sequence data in the field of social sciences. Although the toolbox
-    is primarily intended for analyzing state or event sequences that describe life
-    courses such as family formation histories or professional careers, its features
-    also apply to many other kinds of categorical sequence data. It accepts many different
-    sequence representations as input and provides tools for converting sequences from
-    one format to another. It offers several functions for describing and rendering
-    sequences, for computing distances between sequences with different metrics (among
-    which optimal matching), original dissimilarity-based analysis tools, and simple
-    functions for extracting the most frequent subsequences and identifying the most
-    discriminating ones among them. A user's guide can be found on the TraMineR web
-    page.
+  summary: Toolbox for the manipulation, description and rendering of sequences, and more generally the mining of sequence data in the field of social sciences. Although the toolbox is primarily intended for analyzing state or event sequences that describe life courses such as family formation histories or professional careers,
+    its features also apply to many other kinds of categorical sequence data. It accepts many different sequence representations as input and provides tools for converting sequences from one format to another. It offers several functions for describing and rendering sequences, for computing distances between sequences with
+    different metrics (among which optimal matching), original dissimilarity-based analysis tools, and simple functions for extracting the most frequent subsequences and identifying the most discriminating ones among them. A user's guide can be found on the TraMineR web page.
   license_family: GPL2
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
