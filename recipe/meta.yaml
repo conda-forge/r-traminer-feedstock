@@ -1,4 +1,4 @@
-{% set version = "2.2-1" %}
+{% set version = "2.2-2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/TraMineR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/TraMineR/TraMineR_{{ version }}.tar.gz
-  sha256: 147e3612bb299220205691897189feffe8ca717590ea6dba19b26e2918e4596d
+  sha256: 0c0823e2f591bb669f8f36dac22199c0d2e2dfb20fc89d62e4a44575d57397a9
 
 build:
   merge_build_host: true  # [win]
@@ -30,21 +30,26 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-hmisc
     - r-rcolorbrewer
     - r-boot
+    - r-cnorm
     - r-cluster
     - r-colorspace
+    - r-psych
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-hmisc
     - r-rcolorbrewer
     - r-boot
+    - r-cnorm
     - r-cluster
     - r-colorspace
+    - r-psych
 
 test:
   commands:
