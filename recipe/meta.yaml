@@ -19,13 +19,6 @@ build:
     - lib/R/lib/
     - lib/
 
-build:
-  merge_build_host: True  # [win]
-  number: 0
-  rpaths:
-    - lib/R/lib/
-    - lib/
-
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
