@@ -19,6 +19,13 @@ build:
     - lib/R/lib/
     - lib/
 
+build:
+  merge_build_host: True  # [win]
+  number: 0
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
@@ -30,21 +37,26 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-hmisc
     - r-rcolorbrewer
     - r-boot
+    - r-cnorm
     - r-cluster
     - r-colorspace
+    - r-psych
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-hmisc
     - r-rcolorbrewer
     - r-boot
+    - r-cnorm
     - r-cluster
     - r-colorspace
+    - r-psych
 
 test:
   commands:
