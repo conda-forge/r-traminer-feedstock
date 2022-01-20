@@ -33,23 +33,21 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-hmisc
     - r-rcolorbrewer
     - r-boot
     - r-cnorm
     - r-cluster
     - r-colorspace
-    - r-psych
+    - r-weights
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    - r-hmisc
     - r-rcolorbrewer
     - r-boot
     - r-cnorm
     - r-cluster
     - r-colorspace
-    - r-psych
+    - r-weights
 
 test:
   commands:
