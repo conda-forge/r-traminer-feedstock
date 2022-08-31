@@ -35,19 +35,17 @@ requirements:
     - r-base
     - r-rcolorbrewer
     - r-boot
-    - r-cnorm
     - r-cluster
     - r-colorspace
-    - r-weights
+    - r-vegan
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-rcolorbrewer
     - r-boot
-    - r-cnorm
     - r-cluster
     - r-colorspace
-    - r-weights
+    - r-vegan
 
 test:
   commands:
