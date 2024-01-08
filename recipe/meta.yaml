@@ -1,4 +1,4 @@
-{% set version = "2.2-8" %}
+{% set version = "2.2-9" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/TraMineR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/TraMineR/TraMineR_{{ version }}.tar.gz
-  sha256: 052b905c067fb1fd71ed8a4f02ccf94579b344bc9e4d8153f5a7e4b520c2e762
+  sha256: 705f5c0bcd476485202200adc8c2266f804bb0907ddf8d6983bd4f38daadc4be
 
 build:
   merge_build_host: true  # [win]
