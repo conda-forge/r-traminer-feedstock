@@ -1,6 +1,5 @@
 {% set version = "2.2-10" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-traminer
@@ -13,8 +12,7 @@ source:
   sha256: 8b1689fe6a0f4ff3493e6b430592705be34f12ac6a24aae1735e5262e50e85a6
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -48,7 +46,6 @@ requirements:
     - r-vegan
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-rcolorbrewer
     - r-boot
     - r-cluster
