@@ -1,4 +1,4 @@
-{% set version = "2.2-11" %}
+{% set version = "2.2-12" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/TraMineR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/TraMineR/TraMineR_{{ version }}.tar.gz
-  sha256: 3d8952e0e52521588a8d14cf4b41a8fdf2c51b417793fcec61588dcf032fcb15
+  sha256: 6463d32c937af84413a01d77140d3961c69ad03383ebc90c0058609b85297a30
 
 build:
   number: 0
